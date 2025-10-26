@@ -1,0 +1,74 @@
+/* Minimal styles for overlay + toast. Keep it isolated and non-intrusive. */
+.ai-shot-panel {
+  position: fixed;
+  z-index: 999999;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+.ai-shot-card {
+  width: min(1100px, calc(100vw - 32px));
+  max-height: min(85vh, 900px);
+  background: #181818;
+  color: #eee;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ai-shot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: #202020;
+  border-bottom: 1px solid #2c2c2c;
+}
+.ai-shot-title { font-weight: 600; }
+.ai-shot-close {
+  background: transparent; border: none; color: #bbb;
+  font-size: 22px; line-height: 1; cursor: pointer;
+}
+ai-shot-close:hover { color: #fff; }
+.ai-shot-body { padding: 14px; overflow: auto; }
+.ai-shot-status { padding: 16px; text-align: center; color: #bbb; }
+.ai-shot-result .ai-shot-columns {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 16px;
+}
+.ai-shot-image {
+  width: 100%; height: auto; border-radius: 6px;
+  border: 1px solid #2e2e2e; background: #111;
+}
+.ai-shot-row { margin-top: 8px; display: flex; gap: 8px; }
+.ai-shot-section {
+  margin-bottom: 14px; background: #111; border: 1px solid #2a2a2a;
+  border-radius: 6px; padding: 10px;
+}
+.ai-shot-section-title {
+  font-size: 12px; color: #aaa; text-transform: uppercase;
+  letter-spacing: 0.04em; margin-bottom: 6px;
+}
+.ai-shot-summary, .ai-shot-ocr, .ai-shot-translation {
+  white-space: pre-wrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 12.5px; color: #ddd;
+}
+.ai-shot-btn {
+  background: #3ea6ff; color: #000; border: none; border-radius: 4px;
+  padding: 8px 10px; font-weight: 600; cursor: pointer;
+}
+.ai-shot-btn:hover { filter: brightness(1.1); }
+.ai-shot-toast {
+  position: fixed; z-index: 1000000; bottom: 24px; left: 50%;
+  transform: translateX(-50%); background: rgba(30,30,30,0.95); color: #eee;
+  border: 1px solid #333; border-radius: 8px; padding: 10px 14px;
+  opacity: 0; pointer-events: none; transition: opacity 0.15s ease; font-size: 13px;
+}
+.ai-shot-toast.show { opacity: 1; }
+@media (max-width: 900px) {
+  .ai-shot-result .ai-shot-columns { grid-template-columns: 1fr; }
+}
