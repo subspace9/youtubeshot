@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## v1.1.1 — 2025-10-26
+## v1.1.1 — 2025-12-17
 
 Initial release of a free, keyless Chrome MV3 extension that adds an "AI Screenshot" button to the YouTube player.
 
