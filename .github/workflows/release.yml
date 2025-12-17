@@ -1,0 +1,25 @@
+name: Release zip on publish
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-attach-zip:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build zip
+        shell: bash
+        run: |
+          bash scripts/get-libs.sh
+          bash scripts/fetch-icons.sh
+          bash scripts/package.sh
+
+      - name: Attach asset to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: youtube-ai-screenshot.zip

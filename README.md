@@ -1,5 +1,7 @@
 # YouTube AI Screenshot (Free, No Keys)
 
+<a href="https://github.com/subspace9/youtubeshot/releases/latest"><img src="https://img.shields.io/github/v/release/subspace9/youtubeshot"></a>
+
 Adds a button to the YouTube player toolbar to:
 - Capture the current video frame
 - Summarize the image (on-device via transformers.js; first run downloads weights)
